@@ -1,4 +1,4 @@
-name: 书旗1
+name: SQ1
 on:
   workflow_dispatch:
   schedule:
@@ -23,7 +23,7 @@ jobs:
           npm install request
           curl ipinfo.io/json
 
-      - name: '【书旗小说1】'
+      - name: '【SQ1】'
         run: |
           cd ~/SQ1/Task   
           node sqxs.js
