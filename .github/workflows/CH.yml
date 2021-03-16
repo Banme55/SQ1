@@ -3,7 +3,7 @@ name: CH
 on:
   workflow_dispatch:
   schedule:
-     - cron: '0 1-10/3 * * *'
+     - cron: '0 0,6,12 * * *'
   watch:
     types: started
 jobs:
