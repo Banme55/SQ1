@@ -1,0 +1,29 @@
+name: youthshare
+
+on:
+  workflow_dispatch:
+  schedule:
+     - cron: '0 4,10 * * *'
+jobs:
+  build:
+    runs-on: ubuntu-latest    
+    if: github.event.repository.owner.id == github.event.sender.id
+    steps:
+      - name: Checkout
+        run: |
+          git clone https://github.com/qiwuhust/Myself-AC.git ~/Myself-AC
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+      - name: npm install
+        run: |
+          cd ~/Myself-AC
+          npm install
+          npm install cron
+          npm install request
+          npm install md5-node
+      - name: '运行 【youthshare】'
+        run: |
+          cd ~/Myself-AC   
+          node Task/youthshare.js
