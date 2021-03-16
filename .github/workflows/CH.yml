@@ -1,8 +1,7 @@
-name: 葱花刷视频
+name: CH
 
 on:
   workflow_dispatch:
-  # 目前运行3000金币左右上限，body不用抓太多没有意义,cron自己看着写
   schedule:
      - cron: '0 1-10/3 * * *'
   watch:
@@ -25,28 +24,28 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: '运行 【葱花视频账号1-视频阅读】'
+      - name: '运行 【CH1】'
         if: env.RONGHUA_VIDEO
         run: |
           node Task/RONGHUA_VIDEO.js
         env:
           RONGHUA_VIDEO: ${{ secrets.RONGHUA_VIDEO }}
 
-      - name: '运行 【葱花视频账号1-视频阅读2】'
+      - name: '运行 【CH2】'
         if: env.RONGHUA_VIDEO2
         run: |
           node Task/RONGHUA_VIDEO.js
         env:
           RONGHUA_VIDEO: ${{ secrets.RONGHUA_VIDEO2 }}
 
-      - name: '运行 【葱花视频账号2-视频阅读】'
+      - name: '运行 【CH3】'
         if: env.RONGHUA_VIDEO3
         run: |
           node Task/RONGHUA_VIDEO.js
         env:
           RONGHUA_VIDEO: ${{ secrets.RONGHUA_VIDEO3 }}
 
-      - name: '运行 【葱花视频账号2-视频阅读2】'
+      - name: '运行 【CH4】'
         if: env.RONGHUA_VIDEO4
         run: |
           node Task/RONGHUA_VIDEO.js
