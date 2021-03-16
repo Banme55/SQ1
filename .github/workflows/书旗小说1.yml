@@ -2,7 +2,7 @@ name: 书旗1
 on:
   workflow_dispatch:
   schedule:
-    - cron: '*/30 0-11/3 * * *'
+    - cron: '0 0,7 * * *'
 jobs:
   build:
     runs-on: ubuntu-latest 
